@@ -5,13 +5,29 @@
     <gmap-map
       :center="center"
       :zoom="12"
+      :options="{
+        zoomControl: true,
+        mapTypeControl: false,
+        scaleControl: false,
+        streetViewControl: false,
+        rotateControl: false,
+        fullscreenControl: true,
+        disableDefaultUi: false
+      }"
       style="width:100%;  height: 500px;">
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
         :position="m.position"
-        @click="center=m.position"
-      ></gmap-marker>
+        :clickable="true"
+        :label="{
+          color: 'red',
+          fontSize: '20px',
+          text: 'star_rate',
+          color: 'black'
+        }"
+        @click="center=m.position">
+      </gmap-marker>
     </gmap-map>
     <!-- End of Google maps -->
 
@@ -25,29 +41,20 @@ export default {
     return {
       center: { lat: 38.907, lng: -77.0369 },
       markers: [],
-      places: [],
-      currentPlace: null
     };
   },
-  // mounted() {
-  //   this.geolocate();
-  // },
+  mounted() {
+    this.addMarker();
+  },
   methods: {
     // receives a place object via the autocomplete component
-    setPlace(place) {
-      this.currentPlace = place;
-    },
     addMarker() {
-      if (this.currentPlace) {
-        const marker = {
-          lat: this.currentPlace.geometry.location.lat(),
-          lng: this.currentPlace.geometry.location.lng()
-        };
-        this.markers.push({ position: marker });
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
-      }
+      const marker = {
+        lat: 38.9074,
+        lng: -77.0502,
+        title: 'Hello World!',
+      };
+      this.markers.push({ position: marker });
     },
     // geolocate: function() {
     //   navigator.geolocation.getCurrentPosition(position => {
