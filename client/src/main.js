@@ -3,8 +3,16 @@
 import Vue from 'vue';
 import App from './App';
 import router from './router';
+import * as VueGoogleMaps from 'vue2-google-maps'
+let {key} = require('./key');
 
 Vue.config.productionTip = false;
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: key,
+  },
+})
 
 /* eslint-disable no-new */
 new Vue({
