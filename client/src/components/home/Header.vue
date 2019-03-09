@@ -2,7 +2,8 @@
   <div>
     <header>
       <div>
-        <h1>Welcome to DC Crimes</h1>
+        <h1 class='center font_style'>Welcome to DC Crimes</h1>
+        <h3 class='center font_style'>Search Through Crime Data on DC</h3>
       </div>
     </header>
   </div>
@@ -16,6 +17,9 @@ export default {
 
 <style scoped>
 
+.center {
+  text-align: center;
+}
 
 header {
   display: flex;
@@ -34,7 +38,7 @@ header div {
   border-radius: 10px;
 }
 
-h1 {
+.font_style {
   color: #fff;
   font-weight: 700;
   text-transform: uppercase;

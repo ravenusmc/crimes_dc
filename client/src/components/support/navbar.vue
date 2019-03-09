@@ -11,6 +11,9 @@
             <li class="nav-item">
               <router-link class="nav-link" to="/">Home</router-link>
             </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/Map">Map</router-link>
+            </li>
           </ul>
         </div>
       </nav>
