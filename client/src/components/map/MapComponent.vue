@@ -1,6 +1,10 @@
 <template>
   <div>
 
+    <div id='control_panel'>
+
+    </div>
+
     <!-- Start of Google maps -->
     <gmap-map
       :center="center"
@@ -23,7 +27,7 @@
         :label="{
           color: 'red',
           fontSize: '20px',
-          text: 'star_rate',
+          text: 'first',
           color: 'black'
         }"
         @click="center=m.position">
@@ -43,16 +47,12 @@ export default {
       markers: [],
     };
   },
-  mounted() {
-    this.addMarker();
-  },
   methods: {
     // receives a place object via the autocomplete component
     addMarker() {
       const marker = {
         lat: 38.9074,
         lng: -77.0502,
-        title: 'Hello World!',
       };
       this.markers.push({ position: marker });
     },
@@ -64,6 +64,15 @@ export default {
     //     };
     //   });
     // }
-  }
+  },
+  mounted() {
+    this.addMarker();
+  },
 };
 </script>
+
+<style scoped>
+#control_panel {
+  height: 200px;
+}
+</style>
