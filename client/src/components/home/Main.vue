@@ -24,6 +24,27 @@
 
     </section>
 
+    <section id='section_two'>
+
+      <div class='section_two_div'>
+
+        <div class='sub_div'>
+          <h1>Map Data</h1>
+
+        </div>
+
+        <div class='sub_div'>
+          <h1>Crime Data</h1>
+        </div>
+
+        <div class='sub_div'>
+          <h1>About Me</h1>
+        </div>
+
+      </div>
+
+    </section>
+
   </div>
 </template>
 
@@ -63,6 +84,24 @@ export default {
   width: 75%;
   margin-left: 5%;
   margin-right: 5%;
+}
+
+/* CSS for section two */
+#section_two {
+  border: 2px solid red;
+}
+
+.section_two_div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2em;
+  margin-top: 25px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.sub_div {
+  background-color: #fff;
 }
 
 
