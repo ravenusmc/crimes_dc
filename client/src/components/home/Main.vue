@@ -28,17 +28,43 @@
 
       <div class='section_two_div'>
 
-        <div class='sub_div'>
-          <h1>Map Data</h1>
-
+        <div>
+          <div class='about image_div'>
+          </div>
+          <div class='sub_div'>
+            <h5>About</h5>
+            <p>Head to this page to find out more about me and specifically
+              why I built this page. I'm pretty sure that you'll find my
+              background quite interesting!
+            </p>
+            <button><router-link class="nav-link" to="/Map">About</router-link></button>
+          </div>
         </div>
 
-        <div class='sub_div'>
-          <h1>Crime Data</h1>
+        <div>
+          <div class='about image_div'>
+          </div>
+          <div class='sub_div'>
+            <h5>About</h5>
+            <p>Head to this page to find out more about me and specifically
+              why I built this page. I'm pretty sure that you'll find my
+              background quite interesting!
+            </p>
+            <button><router-link class="nav-link" to="/Map">About</router-link></button>
+          </div>
         </div>
 
-        <div class='sub_div'>
-          <h1>About Me</h1>
+        <div>
+          <div class='about image_div'>
+          </div>
+          <div class='sub_div'>
+            <h5>About</h5>
+            <p>Head to this page to find out more about me and specifically
+              why I built this page. I'm pretty sure that you'll find my
+              background quite interesting!
+            </p>
+            <button><router-link class="nav-link" to="/Map">About</router-link></button>
+          </div>
         </div>
 
       </div>
@@ -88,7 +114,7 @@ export default {
 
 /* CSS for section two */
 #section_two {
-  border: 2px solid red;
+  border: 2px solid #ebebeb;
 }
 
 .section_two_div {
@@ -98,10 +124,35 @@ export default {
   margin-top: 25px;
   margin-bottom: 50px;
   text-align: center;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
 .sub_div {
   background-color: #fff;
+  padding: 10px;
+}
+
+button {
+  background-color: #288dc1;
+  border-color: #247eac;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 50%;
+}
+
+button a {
+  color: #fff;
+}
+
+.about {
+  background-image: url('../../assets/images/about.jpg');
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
 }
 
 
