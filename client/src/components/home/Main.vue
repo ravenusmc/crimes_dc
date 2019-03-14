@@ -50,7 +50,7 @@
               some data analysis. The page will also provide the user with some
               thoughts as to what the data shows.
             </p>
-            <button><router-link class="nav-link" to="/Map">Graphs</router-link></button>
+            <button><router-link class="nav-link" to="/Graph">Graphs</router-link></button>
           </div>
         </div>
 
