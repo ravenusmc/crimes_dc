@@ -37,7 +37,7 @@
               there is the map of DC where your able to see crimes based on the criteria
               that you select.
             </p>
-            <button><router-link class="nav-link" to="/Map">About</router-link></button>
+            <button><router-link class="nav-link" to="/Map">Map</router-link></button>
           </div>
         </div>
 
@@ -50,7 +50,7 @@
               some data analysis. The page will also provide the user with some
               thoughts as to what the data shows.
             </p>
-            <button><router-link class="nav-link" to="/Map">About</router-link></button>
+            <button><router-link class="nav-link" to="/Map">Graphs</router-link></button>
           </div>
         </div>
 
@@ -171,6 +171,37 @@ button a {
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;
+}
+
+/* Media queries to make the site responsive */
+@media only all and (max-width: 768px){
+
+  .video_div {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  iframe {
+    width: 270px;
+    height: 200;
+  }
+
+  .text_div {
+    width: 75%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .section_two_div {
+    grid-template-columns: 1fr;
+  }
+
 }
 
 
