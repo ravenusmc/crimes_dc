@@ -1,10 +1,6 @@
 <template>
   <div>
-
-    <div id='control_panel'>
-
-    </div>
-
+    
     <!-- Start of Google maps -->
     <gmap-map
       :center="center"
@@ -72,7 +68,4 @@ export default {
 </script>
 
 <style scoped>
-#control_panel {
-  height: 200px;
-}
 </style>
