@@ -34,5 +34,6 @@ footer {
   align-items: center;
   margin-bottom: 50px;
   padding-top: 50px;
+  color: #fff;
 }
 </style>

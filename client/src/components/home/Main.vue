@@ -29,26 +29,26 @@
       <div class='section_two_div'>
 
         <div>
-          <div class='about image_div'>
+          <div class='DC image_div'>
           </div>
           <div class='sub_div'>
-            <h5>About</h5>
-            <p>Head to this page to find out more about me and specifically
-              why I built this page. I'm pretty sure that you'll find my
-              background quite interesting!
+            <h5>Map</h5>
+            <p>Head to this page to actually see the heart of this project! Here
+              there is the map of DC where your able to see crimes based on the criteria
+              that you select.
             </p>
             <button><router-link class="nav-link" to="/Map">About</router-link></button>
           </div>
         </div>
 
         <div>
-          <div class='about image_div'>
+          <div class='data image_div'>
           </div>
           <div class='sub_div'>
-            <h5>About</h5>
-            <p>Head to this page to find out more about me and specifically
-              why I built this page. I'm pretty sure that you'll find my
-              background quite interesting!
+            <h5>Graphs</h5>
+            <p>Head to this page to see some graphs based on the data along with
+              some data analysis. The page will also provide the user with some
+              thoughts as to what the data shows.
             </p>
             <button><router-link class="nav-link" to="/Map">About</router-link></button>
           </div>
@@ -144,6 +144,24 @@ button {
 
 button a {
   color: #fff;
+}
+
+.DC {
+  background-image: url('../../assets/images/dc.jpg');
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+}
+
+.data {
+  background-image: url('../../assets/images/data_analysis.jpeg');
+  height: 200px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
 }
 
 .about {
