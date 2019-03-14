@@ -14,7 +14,11 @@ export default {
   components: {
     GoogleMap,
     Selection,
-  }
+  },
+  data(){
+    return {
+    }
+  },
 };
 </script>
 

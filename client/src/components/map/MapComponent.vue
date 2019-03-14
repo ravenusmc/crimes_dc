@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+
     <!-- Start of Google maps -->
     <gmap-map
       :center="center"
@@ -35,12 +35,14 @@
 </template>
 
 <script>
+import { eventBus } from '../../main.js';
 export default {
   name: "GoogleMap",
   data() {
     return {
       center: { lat: 38.907, lng: -77.0369 },
       markers: [],
+      queryData: {},
     };
   },
   methods: {
@@ -52,17 +54,15 @@ export default {
       };
       this.markers.push({ position: marker });
     },
-    // geolocate: function() {
-    //   navigator.geolocation.getCurrentPosition(position => {
-    //     this.center = {
-    //       lat: position.coords.latitude,
-    //       lng: position.coords.longitude
-    //     };
-    //   });
-    // }
+  },
+  created() {
+    eventBus.$on('dataSubmitted', (queryData) =>{
+      console.log(queryData)
+      this.addMarker();
+    })
   },
   mounted() {
-    this.addMarker();
+    // this.addMarker();
   },
 };
 </script>

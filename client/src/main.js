@@ -14,6 +14,9 @@ Vue.use(VueGoogleMaps, {
   },
 })
 
+//Vue bus
+export const eventBus = new Vue()
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

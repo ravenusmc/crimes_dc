@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { eventBus } from '../../main.js';
+
 export default {
   name: 'Selection',
   data() {
@@ -35,8 +37,13 @@ export default {
   },
   methods: {
     submitSelection(evt) {
-      console.log(this.shift)
-      console.log(this.offense)
+      evt.preventDefault();
+      const queryData = {
+        shift: this.shift,
+        offense: this.offense
+      };
+      // this.$emit('dataSubmitted', queryData)
+      eventBus.$emit('dataSubmitted', queryData)
     }
   },
 }
