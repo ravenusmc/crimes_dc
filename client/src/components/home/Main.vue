@@ -63,7 +63,7 @@
               why I built this page. I'm pretty sure that you'll find my
               background quite interesting!
             </p>
-            <button><router-link class="nav-link" to="/Map">About</router-link></button>
+            <button><router-link class="nav-link" to="/About">About</router-link></button>
           </div>
         </div>
 
