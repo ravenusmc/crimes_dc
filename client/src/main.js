@@ -5,14 +5,20 @@ import App from './App';
 import router from './router';
 import * as VueGoogleMaps from 'vue2-google-maps'
 let {key} = require('./key');
+import VueMaterial from 'vue-material';
+import 'vue-material/dist/vue-material.min.css';
 
 Vue.config.productionTip = false;
 
+//Google maps
 Vue.use(VueGoogleMaps, {
   load: {
     key: key,
   },
 })
+
+//Material design
+Vue.use(VueMaterial)
 
 //Vue bus
 export const eventBus = new Vue()

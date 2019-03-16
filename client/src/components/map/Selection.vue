@@ -5,6 +5,8 @@
       <p>Please select the shift</p>
         <form @submit="submitSelection">
 
+          <md-datepicker v-model="firstDate" md-immediately />
+
           <select v-model="shift" name="shift">
             <option v-for="shift in shifts" :value="shift">{{shift}}</option>
           </select>
