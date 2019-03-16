@@ -27,6 +27,7 @@
 
 <script>
 import { eventBus } from '../../main.js';
+import moment from 'moment'
 
 export default {
   name: 'Selection',
@@ -45,6 +46,8 @@ export default {
   methods: {
     submitSelection(evt) {
       evt.preventDefault();
+      this.firstDate = moment(this.firstDate).format('M/D/YYYY h:mm:ss A')
+      this.lastDate = moment(this.firstDate).format('M/D/YYYY h:mm:ss A')
       console.log(this.firstDate)
       console.log(this.lastDate)
       //I have to format the date
@@ -77,6 +80,7 @@ form {
   border-radius: 8px;
   box-shadow: 3px 5px #888888;
   text-align: center;
+  border: 1px solid black;
 }
 
 

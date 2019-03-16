@@ -74,7 +74,7 @@
   </div>
 </template>
 
-<script>
+<script scoped>
 export default {
   name: 'Main',
 }
@@ -143,7 +143,7 @@ button {
 }
 
 button a {
-  color: #fff;
+  color: #fff !important;
 }
 
 .DC {
