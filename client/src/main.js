@@ -7,6 +7,7 @@ import * as VueGoogleMaps from 'vue2-google-maps'
 let {key} = require('./key');
 import VueMaterial from 'vue-material';
 import 'vue-material/dist/vue-material.min.css';
+import { store } from './store/store';
 
 Vue.config.productionTip = false;
 
@@ -27,6 +28,7 @@ export const eventBus = new Vue()
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>',
 });

@@ -14,7 +14,7 @@
         fullscreenControl: true,
         disableDefaultUi: false
       }"
-      style="width:100%;  height: 500px;">
+      style="width:100%;  height: 700px;">
       <gmap-marker
         :key="index"
         v-for="(m, index) in markers"
@@ -35,7 +35,10 @@
 </template>
 
 <script>
-import { eventBus } from '../../main.js';
+import { eventBus } from '../../main';
+import { mapGetters } from 'vuex';
+import { mapActions } from 'vuex';
+
 export default {
   name: "GoogleMap",
   data() {
@@ -46,6 +49,9 @@ export default {
     };
   },
   methods: {
+    ...mapActions([
+      'fetchCrimeData',
+    ]),
     // receives a place object via the autocomplete component
     addMarker() {
       const marker = {
@@ -58,7 +64,8 @@ export default {
   created() {
     eventBus.$on('dataSubmitted', (queryData) =>{
       console.log(queryData)
-      this.addMarker();
+      this.fetchCrimeData()
+      //this.addMarker();
     })
   },
   mounted() {

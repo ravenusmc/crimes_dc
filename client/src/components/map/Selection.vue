@@ -26,8 +26,9 @@
 </template>
 
 <script>
-import { eventBus } from '../../main.js';
-import moment from 'moment'
+import moment from 'moment';
+import { eventBus } from '../../main';
+
 
 export default {
   name: 'Selection',
@@ -38,30 +39,26 @@ export default {
       shift: '',
       shifts: ['EVENING', 'MIDNIGHT', 'DAY'],
       offense: '',
-      offenses: ['THEFT/OTHER','MOTOR VEHICLE THEFT','BURGLARY','ROBBERY',
-                'ASSAULT W/DANGEROUS WEAPON','THEFT F/AUTO','SEX ABUSE','HOMICIDE',
-                'ARSON']
-    }
+      offenses: ['THEFT/OTHER', 'MOTOR VEHICLE THEFT', 'BURGLARY', 'ROBBERY',
+        'ASSAULT W/DANGEROUS WEAPON', 'THEFT F/AUTO', 'SEX ABUSE', 'HOMICIDE',
+        'ARSON'],
+    };
   },
   methods: {
     submitSelection(evt) {
       evt.preventDefault();
-      this.firstDate = moment(this.firstDate).format('M/D/YYYY h:mm:ss A')
-      this.lastDate = moment(this.firstDate).format('M/D/YYYY h:mm:ss A')
-      console.log(this.firstDate)
-      console.log(this.lastDate)
-      //I have to format the date
+      this.firstDate = moment(this.firstDate).format('M/D/YYYY h:mm:ss A');
+      this.lastDate = moment(this.firstDate).format('M/D/YYYY h:mm:ss A');
       const queryData = {
         firstDate: this.firstDate,
         lastDate: this.lastDate,
         shift: this.shift,
         offense: this.offense,
       };
-      // this.$emit('dataSubmitted', queryData)
-      eventBus.$emit('dataSubmitted', queryData)
-    }
+      eventBus.$emit('dataSubmitted', queryData);
+    },
   },
-}
+};
 </script>
 
 <style scoped>
