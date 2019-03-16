@@ -2,20 +2,23 @@
   <div>
 
     <section>
-      <p>Please select the shift</p>
         <form @submit="submitSelection">
 
+          <h5>Select the Date:</h5>
           <md-datepicker v-model="firstDate" md-immediately />
+          <md-datepicker v-model="lastDate" md-immediately />
 
+          <h5>Select the Shift:</h5>
           <select v-model="shift" name="shift">
             <option v-for="shift in shifts" :value="shift">{{shift}}</option>
           </select>
-
+          <br>
+          <h5>Select the Offense:</h5>
           <select v-model="offense" name="offense">
             <option v-for="offense in offenses" :value="offense">{{offense}}</option>
           </select>
-
-          <button type="submit" variant="primary">Submit</button>
+          <br>
+          <md-button type="submit" class="md-raised md-primary">See Crimes</md-button>
         </form>
     </section>
 
@@ -29,6 +32,8 @@ export default {
   name: 'Selection',
   data() {
     return {
+      firstDate: new Date(),
+      lastDate: new Date(),
       shift: '',
       shifts: ['EVENING', 'MIDNIGHT', 'DAY'],
       offense: '',
@@ -40,9 +45,14 @@ export default {
   methods: {
     submitSelection(evt) {
       evt.preventDefault();
+      console.log(this.firstDate)
+      console.log(this.lastDate)
+      //I have to format the date
       const queryData = {
+        firstDate: this.firstDate,
+        lastDate: this.lastDate,
         shift: this.shift,
-        offense: this.offense
+        offense: this.offense,
       };
       // this.$emit('dataSubmitted', queryData)
       eventBus.$emit('dataSubmitted', queryData)
@@ -54,7 +64,20 @@ export default {
 <style scoped>
 
 section {
-  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+
+form {
+  margin-top: 30px;
+  margin-bottom: 45px;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 3px 5px #888888;
+  text-align: center;
+}
+
 
 </style>
