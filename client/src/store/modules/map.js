@@ -13,19 +13,16 @@ const getters = {
 
 const actions = {
 
-  fetchCrimeData: ({ commit }) => {
-    console.log('Mike')
-    // const varietyObject = {
-    //   variety: payload
-    // };
-    // const path = 'http://localhost:5000/worldMapData';
-    // axios.post(path, varietyObject)
-    // .then((res) => {
-    //   commit('setWineData', res.data)
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // });
+  fetchCrimeData: ({ commit }, payload) => {
+    const path = 'http://localhost:5000/getMapData';
+    axios.post(path, payload)
+    .then((res) => {
+      console.log(res.data)
+      // commit('setShiftData', res.data)
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   },
 
 };

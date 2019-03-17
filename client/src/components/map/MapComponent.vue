@@ -63,8 +63,7 @@ export default {
   },
   created() {
     eventBus.$on('dataSubmitted', (queryData) =>{
-      console.log(queryData)
-      this.fetchCrimeData()
+      this.fetchCrimeData(queryData)
       //this.addMarker();
     })
   },
