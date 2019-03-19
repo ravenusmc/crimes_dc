@@ -16,6 +16,7 @@ class Data():
         last_time_stamp = pd.to_datetime(data['lastDate'])
         self.data = self.data.loc[(self.data.REPORT_DAT >= first_time_stamp) &
         (self.data.REPORT_DAT <= last_time_stamp), :]
+        self.data = self.data[(self.data.SHIFT == data['shift']) & (self.data.OFFENSE == data['offense'])]
         print(self.data)
 
 
