@@ -36,9 +36,9 @@ export default {
     return {
       firstDate: new Date(),
       lastDate: new Date(),
-      shift: '',
+      shift: 'EVENING',
       shifts: ['EVENING', 'MIDNIGHT', 'DAY'],
-      offense: '',
+      offense: 'THEFT/OTHER',
       offenses: ['THEFT/OTHER', 'MOTOR VEHICLE THEFT', 'BURGLARY', 'ROBBERY',
         'ASSAULT W/DANGEROUS WEAPON', 'THEFT F/AUTO', 'SEX ABUSE', 'HOMICIDE',
         'ARSON'],
