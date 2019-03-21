@@ -48,7 +48,7 @@ export default {
     submitSelection(evt) {
       evt.preventDefault();
       this.firstDate = moment(this.firstDate).format('M/D/YYYY h:mm:ss A');
-      this.lastDate = moment(this.firstDate).format('M/D/YYYY h:mm:ss A');
+      this.lastDate = moment(this.lastDate).format('M/D/YYYY h:mm:ss A');
       const queryData = {
         firstDate: this.firstDate,
         lastDate: this.lastDate,
