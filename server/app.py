@@ -20,8 +20,8 @@ def route_one():
     data = Data()
     if request.method == 'POST':
         post_data = request.get_json()
-        data = data.getMapData(post_data)
-    return jsonify(51)
+        data_list = data.getMapData(post_data)
+    return jsonify(data_list)
 
 if __name__ == '__main__':
     app.run()

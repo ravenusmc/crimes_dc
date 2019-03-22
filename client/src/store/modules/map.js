@@ -17,7 +17,8 @@ const actions = {
     const path = 'http://localhost:5000/getMapData';
     axios.post(path, payload)
     .then((res) => {
-      console.log(res.data)
+      console.log('Working??')
+      console.log(res)
       // commit('setShiftData', res.data)
     })
     .catch((error) => {

@@ -10,7 +10,6 @@ class Data():
 
     def getMapData(self, data):
         print('Getting Data')
-        print(data)
         #Converting the REPORT_DAT column into a datetime column
         self.data['REPORT_DAT'] = pd.to_datetime(self.data['REPORT_DAT'])
         #Converting what the user entered to proper format
@@ -21,22 +20,25 @@ class Data():
         #Getting the specific columns that I want
         self.data = self.data[['BLOCK', 'OFFENSE', 'VOTING_PRECINCT', 'XBLOCK', 'YBLOCK']]
         print(self.data.head())
-        # # print(self.data.iloc[0, 0])
         # #This list will hold all the dictionaries for the data
-        # data_list = []
-        # #A count to loop through the dataset
-        # count = 0
-        # crime_information['Location'] = self.data.iloc[count,0]
-        # print(crime_information['Location'])
+        data_list = []
+        #A count to loop through the dataset
+        count = 0
+        # crime_information['Location'] = self.data.iloc[count,1]
+        # print(self.data.iloc[count,4])
+        while count < len(self.data):
+            #This dictionary will hold the wineries and variety's
+            crime_information = {}
+            crime_information['Location'] = self.data.iloc[count,0]
+            crime_information['Offense'] = self.data.iloc[count,1]
+            crime_information['Votint Precinct'] = self.data.iloc[count,2]
+            crime_information['long'] = self.data.iloc[count,3]
+            crime_information['lat'] = self.data.iloc[count,4]
+            data_list.append(crime_information)
+            count += 1
+        print('data Finished')
+        return data_list
 
-        # while count < len(self.data):
-        #     #This dictionary will hold the wineries and variety's
-        #     crime_information = {}
-        #     crime_information['Location'] = self.data.iloc[count,0]
-        #     # wine_information['Variety'] = self.data.iloc[count,1]
-        #     # wine_information['Country'] = self.data.iloc[count,2]
-        #     # wine_information_list.append(wine_information)
-        #     count += 1
 
 
 # test = Data()
