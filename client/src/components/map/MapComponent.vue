@@ -3,6 +3,7 @@
 
     <!-- Start of Google maps -->
     <gmap-map
+      ref='gmap'
       :center="center"
       :zoom="12"
       :options="{
@@ -20,11 +21,6 @@
         v-for="(m, index) in markers"
         :position="m.position"
         :clickable="true"
-        :label="{
-          color: 'red',
-          fontSize: '20px',
-          color: 'black'
-        }"
         @click="center=m.position">
       </gmap-marker>
     </gmap-map>
@@ -84,13 +80,10 @@ export default {
     },
   },
   created() {
-    eventBus.$on('dataSubmitted', (queryData) =>{
-      this.fetchCrimeData(queryData)
-      this.addMarkers();
+    eventBus.$on('dataSubmitted', (queryData) =>  {
+        this.fetchCrimeData(queryData)
+        this.addMarkers();
     })
-  },
-  mounted() {
-    // this.addMarker();
   },
 };
 </script>

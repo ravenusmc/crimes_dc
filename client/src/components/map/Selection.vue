@@ -34,8 +34,8 @@ export default {
   name: 'Selection',
   data() {
     return {
-      firstDate: new Date(),
-      lastDate: new Date(),
+      firstDate: new Date(2008, 0, 1),
+      lastDate: new Date(2016, 11,31),
       shift: 'EVENING',
       shifts: ['EVENING', 'MIDNIGHT', 'DAY'],
       offense: 'THEFT/OTHER',
