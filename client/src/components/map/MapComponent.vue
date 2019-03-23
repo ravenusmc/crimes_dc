@@ -57,6 +57,9 @@ export default {
       'fetchCrimeData',
     ]),
     addMarkers() {
+      //clearing out the markers
+      this.markers = [];
+
       for (var i = 0; i < this.crimeData.length; i++){
           var marker = {position: {lat: 0, lng: 0}};
           //const [name, lat, lon] = airports[this.crimeData[i]]
@@ -65,8 +68,19 @@ export default {
           this.markers.push(marker)
         }
 
-      this.markers.push({ position: marker });
-      console.log(this.markers)
+        //set bounds of the map for markers
+        if (this.markers.length === 1){
+          this.center = { lat: marker.position.lat, lng: marker.position.lng }
+        }else {
+          this.$refs.gmap.$mapPromise.then((map) => {
+            const bounds = new google.maps.LatLngBounds()
+            for (let m of this.markers) {
+              bounds.extend(m.position)
+            }
+           map.fitBounds(bounds);
+          });
+        }
+      // this.markers.push({ position: marker });
     },
   },
   created() {
