@@ -19,13 +19,10 @@ class Data():
         self.data = self.data[(self.data.SHIFT == data['shift']) & (self.data.OFFENSE == data['offense'])]
         #Getting the specific columns that I want
         self.data = self.data[['BLOCK', 'OFFENSE', 'VOTING_PRECINCT', 'XBLOCK', 'YBLOCK']]
-        print(self.data.head())
         # #This list will hold all the dictionaries for the data
         data_list = []
         #A count to loop through the dataset
         count = 0
-        # crime_information['Location'] = self.data.iloc[count,1]
-        # print(self.data.iloc[count,4])
         while count < len(self.data):
             #This dictionary will hold the wineries and variety's
             crime_information = {}

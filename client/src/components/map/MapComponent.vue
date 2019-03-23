@@ -23,7 +23,6 @@
         :label="{
           color: 'red',
           fontSize: '20px',
-          text: 'first',
           color: 'black'
         }"
         @click="center=m.position">
@@ -48,23 +47,32 @@ export default {
       queryData: {},
     };
   },
+  computed: {
+    ...mapGetters([
+      'crimeData'
+    ])
+  },
   methods: {
     ...mapActions([
       'fetchCrimeData',
     ]),
-    // receives a place object via the autocomplete component
-    addMarker() {
-      const marker = {
-        lat: 38.9074,
-        lng: -77.0502,
-      };
+    addMarkers() {
+      for (var i = 0; i < this.crimeData.length; i++){
+          var marker = {position: {lat: 0, lng: 0}};
+          //const [name, lat, lon] = airports[this.crimeData[i]]
+          marker.position.lat = this.crimeData[i].lat;
+          marker.position.lng = this.crimeData[i].long;
+          this.markers.push(marker)
+        }
+
       this.markers.push({ position: marker });
+      console.log(this.markers)
     },
   },
   created() {
     eventBus.$on('dataSubmitted', (queryData) =>{
       this.fetchCrimeData(queryData)
-      //this.addMarker();
+      this.addMarkers();
     })
   },
   mounted() {

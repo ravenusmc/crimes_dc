@@ -4,11 +4,11 @@ import axios from 'axios';
 import jsonp from 'jsonp';
 
 const state = {
-  queryData: {},
+  crimeData: {},
 };
 
 const getters = {
-  queryData: state => state.queryData,
+  crimeData: state => state.crimeData,
 };
 
 const actions = {
@@ -17,9 +17,7 @@ const actions = {
     const path = 'http://localhost:5000/getMapData';
     axios.post(path, payload)
     .then((res) => {
-      console.log('Working??')
-      console.log(res)
-      // commit('setShiftData', res.data)
+      commit('setCrimeData', res.data)
     })
     .catch((error) => {
       console.log(error);
@@ -30,8 +28,8 @@ const actions = {
 
 const mutations = {
 
-  setShiftData(state, data) {
-    state.queryData = data;
+  setCrimeData(state, data) {
+    state.crimeData = data;
   },
 
 };
