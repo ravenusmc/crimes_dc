@@ -41,7 +41,7 @@
           </div>
         </div>
 
-        <div>
+        <!-- <div>
           <div class='data image_div'>
           </div>
           <div class='sub_div'>
@@ -52,7 +52,7 @@
             </p>
             <button><router-link class="nav-link" to="/Graph">Graphs</router-link></button>
           </div>
-        </div>
+        </div> -->
 
         <div>
           <div class='about image_div'>
@@ -119,7 +119,7 @@ export default {
 
 .section_two_div {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 2em;
   margin-top: 25px;
   margin-bottom: 50px;

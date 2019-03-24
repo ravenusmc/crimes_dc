@@ -58,7 +58,6 @@ export default {
 
       for (var i = 0; i < this.crimeData.length; i++){
           var marker = {position: {lat: 0, lng: 0}};
-          //const [name, lat, lon] = airports[this.crimeData[i]]
           marker.position.lat = this.crimeData[i].lat;
           marker.position.lng = this.crimeData[i].long;
           this.markers.push(marker)
@@ -76,11 +75,11 @@ export default {
            map.fitBounds(bounds);
           });
         }
-      // this.markers.push({ position: marker });
     },
   },
   created() {
     eventBus.$on('dataSubmitted', (queryData) =>  {
+        console.log(queryData)
         this.fetchCrimeData(queryData)
         this.addMarkers();
     })
