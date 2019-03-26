@@ -79,7 +79,6 @@ export default {
   },
   created() {
     eventBus.$on('dataSubmitted', (queryData) =>  {
-        console.log(queryData)
         this.fetchCrimeData(queryData)
         this.addMarkers();
     })

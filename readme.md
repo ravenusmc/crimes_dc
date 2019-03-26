@@ -34,6 +34,4 @@ None at this time.
 
 # Preview
 
-To see a video that talks about this project please go here: COMING SOON
-
-Blog entry: COMING SOON
+To see a video that talks about this project please go here: https://www.youtube.com/watch?v=QVYUm6nYjBY
